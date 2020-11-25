@@ -1,0 +1,15 @@
+public class OpportunityTriggerHandler extends TriggerHandler {
+	public override void beforeInsert() {
+		setOpportunityName();
+	}
+
+	public override void beforeUpdate() {
+		//implement code
+	}
+
+	private void setOpportunityName() {
+		for(Opportunity opp : Trigger.new){
+	      	opp.Name = opp.Name + ':' + System.today();
+	   	}
+	}
+}
